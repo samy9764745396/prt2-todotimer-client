@@ -22,7 +22,7 @@ const Home = () => {
     }, [token,navigator])
 
     useEffect(() => {
-        axios.post("http://localhost:5000/addTasks", { user: currentUSer, data: userData })
+        axios.post("https://todotimer-server.onrender.com/addTasks", { user: currentUSer, data: userData })
             .then(res => {
                 let allData = res.data.message
                 // console.log(allData)
