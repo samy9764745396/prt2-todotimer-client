@@ -9,7 +9,7 @@ const Login = () => {
     const naviator = useNavigate()
     const oldUser = () => {
         if (user.email && user.password) {
-            axios.post("http://localhost:5000/logIn", user)
+            axios.post("https://todotimer-server.onrender.com/logIn", user)
                 .then(res => {
                     if (res.data.message === "success") {
                         window.localStorage.setItem("token", res.data.token)
@@ -33,7 +33,7 @@ const Login = () => {
         <div id="main-container">
             <div id="main-container-login">
                 <div id="gif-box">
-                    {/* <img src={require("./images/login.gif")} alt=""/> */}
+               
                 </div>
                 <div id="login-container">
                     <h1>Log In</h1>

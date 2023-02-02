@@ -11,7 +11,7 @@ const SignUp = () => {
     const newUser = () => {
         if (user.email && user.password && user.confirm_password) {
             if (user.password === user.confirm_password) {
-                axios.post("http://localhost:5000/signUp", user)
+                axios.post("https://todotimer-server.onrender.com/signUp", user)
                     .then((res) => {
                         alert(res.data.message)
                         naviator("/")

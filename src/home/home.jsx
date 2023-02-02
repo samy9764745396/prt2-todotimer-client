@@ -68,7 +68,7 @@ const Home = () => {
         // console.log(onGoing)
         if (onGoing.length==0) {
             let startTime = new Date().getTime();
-            axios.post("http://localhost:5000/updateToStart", { id, time: startTime,user: currentUSer })
+            axios.post("https://todotimer-server.onrender.com/updateToStart", { id, time: startTime,user: currentUSer })
                 .then(res => {
                     let allData = res.data.message
                 
@@ -85,7 +85,7 @@ const Home = () => {
 
     }
     const handlePauseBtn = (e, id) => {
-        axios.post("http://localhost:5000/updateToPause", { id,user: currentUSer })
+        axios.post("https://todotimer-server.onrender.com/updateToPause", { id,user: currentUSer })
         .then(res => {
 
             let allData = res.data.message
@@ -104,7 +104,7 @@ const Home = () => {
         })
         console.log(onGoing)
         if (onGoing.length===0) {
-            axios.post("http://localhost:5000/updateToResume",{ id,user: currentUSer })
+            axios.post("https://todotimer-server.onrender.com/updateToResume",{ id,user: currentUSer })
                 .then(res => {
                     let allData = res.data.message
                 
@@ -121,7 +121,7 @@ const Home = () => {
 
     }
     const handleStoptBtn = (e, id) => {
-        axios.post("http://localhost:5000/updateToComplete", { id,user: currentUSer })
+        axios.post("https://todotimer-server.onrender.com/updateToComplete", { id,user: currentUSer })
             .then(res => {
 
                 let allData = res.data.message
