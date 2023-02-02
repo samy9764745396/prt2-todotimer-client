@@ -19,7 +19,7 @@ const Home = () => {
         if (!token) {
             navigator("/")
         }
-    }, [])
+    }, [token,navigator])
 
     useEffect(() => {
         axios.post("http://localhost:5000/addTasks", { user: currentUSer, data: userData })
@@ -32,7 +32,7 @@ const Home = () => {
                 console.log(err)
             })
 
-    }, [userData])//handle click add new task unnecessary
+    }, [userData,currentUSer])   //handle click add new task unnecessary
 
 
 
@@ -66,7 +66,7 @@ const Home = () => {
             return task.status === "Ongoing"
         })
         // console.log(onGoing)
-        if (onGoing.length==0) {
+        if (onGoing.length===0) {
             let startTime = new Date().getTime();
             axios.post("https://todotimer-server.onrender.com/updateToStart", { id, time: startTime,user: currentUSer })
                 .then(res => {
